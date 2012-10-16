@@ -1,6 +1,6 @@
 # Unbutton
 
-TODO: Write a gem description
+Unbutton provides a set of helper methods to share content on the web without crappy buttons.
 
 ## Installation
 
@@ -18,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	require 'unbutton'
+	Unbutton.facebook_link "http://wallwisher.com", { title: 'Paper for the web', description: 'Simplest way to put content on the web', media: 'http://wallwisher.com/assets/wallwisher-big-crane.png' }
+
+Supported services are `facebook`, `twitter`, `pinterest`, `tumblr`, `googleplus`, and `linkedin`.
 
 ## Contributing
 
