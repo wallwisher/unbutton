@@ -11,7 +11,7 @@ module Unbutton
 
   def self.linkedin_link(url, options)
     base = "http://www.linkedin.com/shareArticle"
-    params = params = { url: url, mini: true }
+    params = { url: url, mini: true }
     options.has_key?(:title) && params[:title] = options[:title]
     options.has_key?(:description) && params[:summary] = options[:description]
     options.has_key?(:source) && params[:source] = options[:source]
@@ -58,6 +58,14 @@ module Unbutton
     }
     options.has_key?(:title) && params[:subject] = options[:title]
     options.has_key?(:source) && params[:subject] += " via #{options[:source]}"
+    create_url base, params
+  end
+
+  def self.skoletube_link(url, options)
+    base = "http://www.skoletube.dk/app/upload/"
+    params = { embed_code: url, iframe: true, secondpage: 'embed' }
+    options.has_key?(:thumbnail) && params[:thumbnail] = options[:thumbnail]
+
     create_url base, params
   end
 
